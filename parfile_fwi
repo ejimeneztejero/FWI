@@ -1,0 +1,82 @@
+##########################################
+### params FWI 
+##########################################
+
+### general params
+
+# Field data
+inv_MCS: 1	# inversion of MCS data
+#inv_WAS: 1	# inversion of WAS data
+
+# Source
+inv_source: 1	# source estimation
+#freq_ricker: 10	# (Hz) Ricker source central freq, if inv_source: 0
+
+# Path of the output Folder for saving/writting results
+output_folder: 'dropbox_source1'
+
+### Initial Vp model
+# Initial model from a file: 
+input_folder_model: '../data_in/input_fwi_mcs_1km'
+vp_file: grad.su
+# format of input velocity model
+vp_su: 1
+#vp_xyz: 0
+#vp_z: 0
+# Initial model from a gradient: 
+#vpi: 1500.
+#vpf: 4000.
+# Dimensions of the velocity model
+nxmodel: 384
+nymodel: 163
+dmodel: 25.
+
+### Inversion strategy
+nFWI: 5	# number of iterations
+fi: 1	# (Hz) initial frequency for inversion
+ff: 6	# (Hz) final frequency for inversion
+step_freq: 1	# (Hz) frequency step
+#method: 1	#=1 value by default
+#typef: 3	#=3 value by default
+#misfit_type: 1	#=1 (L2) by default
+#BP_type: 1	# Bandpass, =1 value by default
+
+# Format for output files
+save_su: 1	
+#save_xyz: 1
+#save_z: 1
+
+##########################################
+
+### Navigation from MCS field data
+input_folder_mcs: '../data_in/input_fwi_mcs_1km'
+mcs_file_list: 'mcs_data.dat'
+nav_shot_mcs: 'nav_shot.txt'
+
+### params header from MCS field data
+NumShots_mcs: 100
+byte_shotnumber_mcs: 1
+NumRec: 120
+drec: 25
+shot_depth_mcs: 25
+streamer_depth: 25
+near_offset: 50
+dt_mcs: 0.002272
+nt_mcs: 3520
+
+##########################################
+
+### Navigation from WAS field data
+#input_folder_was: '../data_in/input_fwi_was_1km'
+#was_file_list: 'obs_data.dat'
+#nav_obs: 'nav_OBS.txt'
+#nav_shot_was: 'nav_shots.txt'
+
+### params header from WAS field data
+##NumSS_was: 1
+#NumOBS: 2
+#NumShots_was: 100
+#byte_shotnumber_was: 1
+#shot_depth_was: 25
+#dt_was: 0.002272
+#nt_was: 3520
