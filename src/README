@@ -1,0 +1,2 @@
+- Mirar programa DC_MCS y DC_OBS, para añadir loop idiv para numtasks y fuente (obs o shotgather de streamer)
+- Cambiar SourceNum blabla que es donde se relaciona el rank con la fuente (de OBS o MCS)
